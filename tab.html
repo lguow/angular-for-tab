@@ -40,7 +40,7 @@
         {id:3,top:'999',bottom:'999'},
         {id:4,top:'8888',bottom:'8888'}
         ];
-        $scope.flag = 1;
+        $scope.flag = $scope.data[0].id;
         $scope.hover = function(id){
             $scope.flag = id;
         }
