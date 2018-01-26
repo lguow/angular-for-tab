@@ -1,0 +1,49 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><style>*{
+        		margin: 0;
+        		padding: 0;
+        	}
+        	.box{
+        		margin: 100px auto;
+        		width: 300px;
+        		height: 200px;
+        		border: 1px solid black;
+        	}
+        	.box .head{
+        		width: 300px;
+        		height: 30px;
+                /* background-color: pink; */
+        	}
+            .box .head span{
+                display: block;
+                width: 25%;
+                height: 30px;
+                float: left;
+                cursor: pointer;
+            }
+            .box .head .sel{
+                background-color: pink;
+            }
+        	.box ul{
+                list-style: none;
+        	}
+            .box ul li{
+                width: 300px;
+                height: 170px;
+               
+            }
+            .box ul li.sel{
+                background-color: pink;
+            }</style></head><body><div class="box" ng-app="myApp" ng-controller="myCtrl"><div class="head"><span ng-repeat="item in data" ng-mouseover="hover(item.id)" ng-class="{sel:item.id === flag}">{{item.top}}</span></div><ul><li ng-repeat="item in data" ng-show="item.id === flag" ng-class="{sel:item.id === flag}">{{item.bottom}}</li></ul></div></body></html><script src="./scripts/angular.js"></script><script>angular.module('myApp',[]).controller('myCtrl',['$scope',function($scope){
+        $scope.data = [
+        {id:1,top:'kelly',bottom:'kelly'},
+        {id:2,top:'666',bottom:'666'},
+        {id:3,top:'999',bottom:'999'},
+        {id:4,top:'8888',bottom:'8888'}
+        ];
+        $scope.flag = 1;
+        $scope.hover = function(id){
+            $scope.flag = id;
+        }
+        
+
+    }])</script>
